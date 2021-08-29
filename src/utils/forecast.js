@@ -9,7 +9,7 @@ const forecast = (lat, long, callback) => {
         if (!error) {
             if (!body.error) {
                 const data = body.current
-                const dataString = `It's currently ${data.temperature}F and feels like ${data.feelslike}F. Wind is ${data.wind_speed} from ${data.wind_dir}`
+                const dataString = `It's currently ${data.weather_descriptions[0]}.  Temp is ${data.temperature}F and feels like ${data.feelslike}F. Wind is ${data.wind_speed} from ${data.wind_dir}`
                 callback(undefined, { dataString, icons: data.weather_icons})
             } else {
                 callback(body.error.info, undefined)
