@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit', (e) => {
                 message1.textContent = data.error
             } else {
                 message1.textContent = ''
-                message2.textContent = `Temperature at ${data.location} is ${data.temperature}F and it feels like ${data.feelslike}F`
+                message2.textContent = data.dataString
             }
         })
     })
